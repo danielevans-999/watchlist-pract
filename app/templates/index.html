@@ -12,7 +12,13 @@
 </head>
 
 <body>
-    <h1>{{message}}</h1>
+    <!-- popular movie section  -->
+    <h3> Popular Movies </h3>
+    <ul>
+        {% for popular_movie in popular %}
+            <li>{{popular_movie.title}}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
