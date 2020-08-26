@@ -11,7 +11,7 @@ def index():
     message = "Hello world"
     return render_template('index.html', message = message)
 
-@app.route('/movie/<movie_id>')
+@app.route('/movie/<int:movie_id>')
 def movie(movie_id):
     '''
     View movie page function that returns the movie details and its data.
