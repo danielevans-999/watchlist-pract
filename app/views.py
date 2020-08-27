@@ -60,4 +60,4 @@ def new_review(id):
         return redirect(url_for('movie', id=movie.id))
     
     title = f'{movie.title} review'
-    return render_template('new_review.html', title=title, reviw_form = form, movie=movie)
+    return render_template('new_review.html', title=title, review_form = form, movie=movie)
