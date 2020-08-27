@@ -10,6 +10,14 @@
 
 {% block content %}
 <!-- popular movie section  -->
+
+<div class="container">
+    <form class="pt-5">
+        <input type="text" name="movie_query" placeholder="Search" class="form-control">
+        <br>
+        <input type="button" value="Submit" class="btn btn-info pt-2">
+    </form>
+</div>
 <h3> Popular Movies </h3>
 <ul>
     {{macro.displayMovieList(popular)}}
