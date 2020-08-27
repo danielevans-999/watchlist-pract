@@ -62,16 +62,16 @@ def get_movie(id):
 
     with urllib.request.urlopen(get_movie_details_url) as url:
         movie_details_data = url.read()
-        moveie_details_response = json.loads(movie_details_data)
+        movie_details_response = json.loads(movie_details_data)
 
         movie_object = None
-        if moveie_details_response:
-            id = moveie_details_response.get('id')
-            title = moveie_details_response.get('original title')
-            overview = moveie_details_response.get('overview')
-            poster = moveie_details_response.get('poster_path')
-            vote_average = moveie_details_response.get('vote_average')
-            vote_count = moveie_details_response.get('vote_count')
+        if movie_details_response:
+            id = movie_details_response.get('id')
+            title = movie_details_response.get('original_title')
+            overview = movie_details_response.get('overview')
+            poster = movie_details_response.get('poster_path')
+            vote_average = movie_details_response.get('vote_average')
+            vote_count = movie_details_response.get('vote_count')
 
             movie_object = Movie(id, title, overview, poster, vote_average, vote_count)
     
