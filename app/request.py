@@ -55,3 +55,24 @@ def process_results(movie_list):
             movie_results.append(movie_object)
             
     return movie_results
+
+
+def get_movie(id):
+    get_movie_details_url = base_url.format(id, api_key)
+
+    with urllib.request.urlopen(get_movie_details_url) as url:
+        movie_details_data = url.read()
+        moveie_details_response = json.loads(movie_details_data)
+
+        movie_object = None
+        if moveie_details_response:
+            id = moveie_details_response.get('id')
+            title = moveie_details_response.get('original title')
+            overview = moveie_details_response.get('overview')
+            poster = moveie_details_response.get('poster_path')
+            vote_average = moveie_details_response.get('vote_average')
+            vote_count = moveie_details_response.get('vote_count')
+
+            movie_object = Movie(id, title, overview, poster, vote_average, vote_count)
+    
+    return movie_object
