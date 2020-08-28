@@ -5,23 +5,30 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath"
-            style="background: url({{movie.poster}}) no-repeat center center;"></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
+        <div class="col-sm-12 col-md-6 col-lg-4 posterPath pt-3">
+            <img src="{{movie.poster}}" alt="{{movie.title}}" class="img-repsonsive" height="250px" width="250px">
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 movie-details">
             <h3>{{movie.title}}</h3>
             <p class="overview">{{ movie.overview }}</p>
             <p class="ratings"><b>{{movie.vote_average}}</b> - <i>{{movie.vote_count}} votes</i></p>
-            <a href="/movie/review/new/{{movie.id}}" class="ratings"> write a new review</a>
+            <!-- <a href="/movie/review/new/{{movie.id}}" class="ratings"> write a new review</a> -->
         </div>
     </div>
-    <div class="row">
-        <h1>Reviews</h1>
+    <div class="row pt-3">
         <hr>
-        {% if reviews %}
+        <hr>
+        <div class="col-sm-12 col-md-6 col-lg-4 movie-details">
+            {% if reviews %}
+            <h1>Reviews</h1>
             {{macro.displayReviews(reviews)}}
-        {% else %}
-            <h3 class="text-center">This movie has no reviews</h3>
-            <a class="btn btn-success btn-lg text-center" href="/movie/review/new/{{movie.id}}"> Write a new review</a>
+            {% else %}
+            <h3>This movie has no reviews</h3>
+            <br>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 movie-details">
+            <a class="btn btn-info btn-sm text-center" href="/movie/review/new/{{movie.id}}"> Write a new review</a>
+        </div>
         {% endif %}
     </div>
 </div>
