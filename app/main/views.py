@@ -36,7 +36,7 @@ def movie(id):
 
     return render_template('movie.html', title = title, movie = movie, reviews = reviews)
 
-@main.route('/search/<movie_name>')
+@main.route('/search/<movie_name>/')
 def search(movie_name):
     '''
     view function to display the search results
