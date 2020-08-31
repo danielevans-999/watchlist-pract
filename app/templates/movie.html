@@ -16,16 +16,14 @@
         </div>
     </div>
     <div class="row pt-3">
+
+        {% if reviews %}
+        <h1>Reviews</h1>
         <hr>
-        <hr>
-        <div class="col-sm-12 col-md-6 col-lg-4 movie-details">
-            {% if reviews %}
-            <h1>Reviews</h1>
-            {{macro.displayReviews(reviews)}}
-            {% else %}
-            <h3>This movie has no reviews</h3>
-            <br>
-        </div>
+        {{macro.displayReviews(reviews)}}
+        {% else %}
+        <h3>This movie has no reviews</h3>
+        <br>
         <div class="col-sm-12 col-md-6 col-lg-4 movie-details">
             <a class="btn btn-info btn-sm text-center" href="/movie/review/new/{{movie.id}}"> Write a new review</a>
         </div>
