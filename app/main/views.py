@@ -3,6 +3,7 @@ from . import main
 from ..request import get_movies,get_movie,search_movie
 from . forms import ReviewForm
 from ..models import Review
+from flask_login import login_required
 
 
 @main.route('/')
@@ -50,6 +51,7 @@ def search(movie_name):
     return render_template('search.html',movies = searched_movies, title= title )
 
 @main.route('/movie/review/new/<int:id>', methods = ['GET', 'POST'])
+@login_required
 def new_review(id):
     form = ReviewForm()
     movie = get_movie(id)
