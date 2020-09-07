@@ -14,8 +14,9 @@
             </div>
             {% endfor %}
             <!--Login form -->
-            {{wtf.quick_form(login_form)}}
-            <p><a href="{{url_for('auth.register')}}"></a>Sign up</p>
+            {{wtf.quick_form(login_form)}} 
+            <br>
+            <p><a href="{{url_for('auth.register')}}">Create Account</a></p>
         </div>
         <div class="col-md-4"></div>
     </div>
