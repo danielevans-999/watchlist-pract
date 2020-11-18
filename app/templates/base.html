@@ -1,6 +1,10 @@
 {% extends 'bootstrap/base.html'%}
-
+{%block styles%}
+{{ super() }}
+<link rel="shortcut icon" href="{{url_for('static', filename='Assets/favicon.ico')}}" type="image/x-icon">
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
 <!--Navbar block -->
 {% block navbar %}
-    {% include 'navbar.html' %}
+{% include 'navbar.html' %}
 {% endblock %}

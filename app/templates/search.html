@@ -3,11 +3,15 @@
 
 {% block content %}
 <div class="container">
+    {% if movies == None%}
+    <h4 class="text-center">The Movie does not exist, you can check on the spelling</h4>
+    {% else %}
     <div class="row">
         <hr>
         <ul>
             {{macro.displayMovieList(movies)}}
         </ul>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
