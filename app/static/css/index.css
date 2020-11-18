@@ -1,4 +1,5 @@
 body{
     overflow-x: hidden;
     background-color: #e3f6f5;
+    scroll-behavior: smooth;
 }
