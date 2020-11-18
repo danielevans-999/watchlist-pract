@@ -20,13 +20,21 @@
 <!-- popular movie section  -->
 
 <div class="container">
-    <form class="pt-5">
-        <input type="text" name="movie_query" placeholder="Search" class="form-control">
-        <br>
-        <input type="submit" value="Submit" class="btn btn-info pt-2">
-    </form>
-</div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="pt-5">
+                <div class="search">
+                    <input type="text" name="movie_query" placeholder="Search" class="form-control">
 
+                    <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<br>
 
 <ul>
     <h3 class="text-center" id="popular"> Popular Movies </h3>
