@@ -3,7 +3,9 @@ body{
     background-color: #e3f6f5;
     scroll-behavior: smooth;
 }
-
+ title{
+   color:black;
+ }
 .dan ul li:hover{
     border-bottom:2px solid rgb(5, 136, 136);
 }
